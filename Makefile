@@ -346,6 +346,19 @@ KALLSYMS	= scripts/kallsyms
 PERL		= perl
 CHECK		= sparse
 
+ARM_FLAGS = -funswitch-loops \
+                  -fpredictive-commoning \
+                  -fgcse-after-reload \
+                  -fipa-cp-clone \
+                  -fsingle-precision-constant \
+                  -pipe -finline-functions \
+                  -ffast-math \
+                  -mcpu=cortex-a5 \
+                  -mfpu=neon \
+                  -march=armv7-a \
+                  -fvect-cost-model
+
+
 # Use the wrapper for the compiler.  This wrapper scans for new
 # warnings and causes the build to stop upon encountering them.
 # CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
@@ -373,7 +386,13 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-		   -fno-delete-null-pointer-checks
+		   -marm -mfloat-abi=softfp -march=armv7-a \
+ 		   -mfpu=neon -ffast-math -pipe \
+ 		   -funswitch-loops -fpredictive-commoning -fgcse-after-reload -fno-tree-vectorize \
+ 		   -ftree-vectorize -funsafe-math-operations \
+ 		   -fsched-spec-load -mvectorize-with-neon-quad \
+ 		   -fmodulo-sched -fmodulo-sched-allow-regmoves \
+ 		   -fno-delete-null-pointer-checks
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
