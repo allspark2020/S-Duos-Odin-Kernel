@@ -11965,7 +11965,7 @@ const unsigned int s5k4ecgx_init_reg2_60hz_EVT1[] = {
 	0x0F120607,		/*700009FE/*_yuvemix_mNegSlopes_1   */
 	0x0F120005,		/*70000A00/*_yuvemix_mNegSlopes_3   */
 	0x0F120607,		/*70000A02/*_yuvemix_mPosSlopes_1   */
-	0x0F120405,		/*70000A04/*_yuvemix_mPosSlopes_3   */
+	0x0F120405,		/*70000A04_yuvemix_mPosSlopes_3   */
 	0x0F120205,		/*70000A06/*_yuviirnr_iXSupportUV   */
 	0x0F120304,		/*70000A08/*_yuviirnr_iHighYNorm   */
 	0x0F120409,		/*70000A0A/*_yuviirnr_iHighUVNorm   */
